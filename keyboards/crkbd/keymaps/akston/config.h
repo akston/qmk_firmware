@@ -100,7 +100,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    define RGB_MATRIX_ANIMATION_SPEED_SLOWER RGB_MATRIX_ANIMATION_SPEED_SLOW / 3
 #endif
 
-#define TAPPING_TERM 140
+#define TAPPING_TERM 200
 #define PERMISSIVE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT
 
@@ -116,18 +116,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #ifdef THEME_GODSPEED
-#   define OLED_FONT_H "keyboards/crkbd/keymaps/rpbaptist/glcdfont_godspeed.c"
-#   define THEME_HSV 132, 255, 125
+#    define OLED_FONT_H "keyboards/crkbd/keymaps/rpbaptist/glcdfont_godspeed.c"
+#    define THEME_HSV 132, 255, 125
 #endif
 
 #ifdef THEME_PULSE
-#   define OLED_FONT_H "keyboards/crkbd/keymaps/rpbaptist/glcdfont_pulse.c"
-#   define THEME_HSV 123, 255, 125
+#    define OLED_FONT_H "keyboards/crkbd/keymaps/rpbaptist/glcdfont_pulse.c"
+#    define THEME_HSV 123, 255, 125
 #endif
 
 #ifdef THEME_LASER
-#   define OLED_FONT_H "keyboards/crkbd/keymaps/rpbaptist/glcdfont_laser.c"
-#   define THEME_HSV HSV_MAGENTA
+#    define OLED_FONT_H "keyboards/crkbd/keymaps/rpbaptist/glcdfont_laser.c"
+#    define THEME_HSV HSV_MAGENTA
 #endif
 
 #define NO_ACTION_ONESHOT
