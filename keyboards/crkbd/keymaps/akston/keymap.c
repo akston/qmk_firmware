@@ -11,7 +11,7 @@ enum layer_names {
   _COLEMAKDHM,
   _QWERTY,
   _SYM,
-  _NAV,
+  _NUM,
   _UTIL
 };
 
@@ -48,17 +48,17 @@ user_config_t user_config;
 #define QWERTY DF(_QWERTY)
 
 // Layer toggle and switch
-#define T_NAV TT(_NAV)
-#define S_NAV MO(_NAV)
-
 #define T_SYM TT(_SYM)
 #define S_SYM MO(_SYM)
 
-// Layer keys with functionality on tap
-#define NAV_0 LT(_NAV, KC_0)
-#define TAB_NUM LT(_NUMPAD, KC_TAB)
+#define T_NUM TT(_NUM)
+#define S_NUM MO(_NUM)
 
-#define EXT_SF LT(_GAMING_EXT, KC_LSHIFT)
+// Layer keys with functionality on tap
+// #define NAV_0 LT(_SYM, KC_0)
+// #define TAB_NUM LT(_NUMPAD, KC_TAB)
+
+// #define EXT_SF LT(_GAMING_EXT, KC_LSHIFT)
 
 // Tap/mod keys
 #define RCTL_BR RCTL_T(KC_RBRACKET)
@@ -86,11 +86,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_TAB,    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y, KC_SCLN, BSP_DEL,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      LCTL_BR,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT,\
+      KC_LCPO,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,    KC_O, KC_QUOT,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_GESC,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   T_SYM, SFT_SPC,    SFT_ENT,   T_NAV, KC_RALT \
+                                          KC_LGUI,   T_SYM, SFT_SPC,    SFT_ENT,   T_NUM, KC_RAPC \
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -98,35 +98,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P, BSP_DEL, \
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      LCTL_BR,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,\
+      KC_LCPO,    KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                         KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_GESC,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   T_SYM, SFT_SPC,    SFT_ENT,   T_NAV, KC_RALT \
+                                          KC_LGUI,   T_SYM, SFT_SPC,    SFT_ENT,   T_NUM, KC_RAPC \
+                                      //`--------------------------'  `--------------------------'
+  ),
+
+  [_NUM] = LAYOUT( \
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+       KC_TAB,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, BSP_DEL,\
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_LEFT, KC_DOWN,   KC_UP,KC_RIGHT, XXXXXXX, XXXXXXX,\
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, KC_DOT, XXXXXXX, XXXXXXX,\
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                          _______,   _______, _______,    _______, S_SYM, _______ \
                                       //`--------------------------'  `--------------------------'
   ),
 
   [_SYM] = LAYOUT( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_TAB,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                         KC_6,    KC_7,    KC_8,    KC_9,    KC_0, BSP_DEL,\
+       KC_TAB, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_TILD, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                      KC_CIRC, KC_AMPR, KC_ASTR, KC_UNDS, KC_MINS, KC_PLUS,\
+      KC_LCTL, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_MINS,  KC_EQL, KC_LBRC, KC_RBRC, KC_BSLS,  KC_GRV,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      LCT_PRN, XXXXXXX, XXXXXXX, XXXXXXX,  KC_EUR, XXXXXXX,                       KC_EQL, KC_PIPE,   KC_LT,   KC_GT, KC_BSLS, RCT_PRN,\
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______,   S_SYM, _______,    _______, _______, _______ \
-                                      //`--------------------------'  `--------------------------'
-  ),
-
-  [_NAV] = LAYOUT( \
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_GRV,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                      KC_PGUP, KC_HOME,   KC_UP,  KC_END, XXXXXXX, KC_BSPC,\
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_TILD,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,\
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      LCT_PRN,  KC_F11,  KC_F12,  KC_INS, KC_PSCR, KC_CAPS,                      WIN_CLS, TAB_BCK, TAB_CLS, TAB_FWD, XXXXXXX, RCT_PRN,\
+      KC_LSFT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE, KC_TILD,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+---------|
-                                          _______, _______, _______,    _______,   S_NAV, _______ \
+                                          _______, S_NUM, _______,    _______,   _______, _______ \
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -146,10 +146,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(default_layer_state)) {
         case _COLEMAKDHM:
-            state = update_tri_layer_state(state, _SYM, _NAV, _UTIL);
+            state = update_tri_layer_state(state, _NUM, _SYM, _UTIL);
             break;
         case _QWERTY:
-            state = update_tri_layer_state(state, _SYM, _NAV, _UTIL);
+            state = update_tri_layer_state(state, _NUM, _SYM, _UTIL);
             break;
     }
     return state;
@@ -214,8 +214,8 @@ void render_status(void) {
         case _SYM:
             oled_write_P(PSTR("Sym  "), false);
             break;
-        case _NAV:
-            oled_write_P(PSTR("Nav  "), false);
+        case _NUM:
+            oled_write_P(PSTR("Num  "), false);
             break;
         case _UTIL:
             oled_write_P(PSTR("Util "), false);
@@ -320,7 +320,7 @@ void rgb_matrix_indicators_user(void) {
             case _SYM:
                 rgb_matrix_layer_helper(HSV_GOLDENROD, LED_FLAG_UNDERGLOW);
                 break;
-            case _NAV:
+            case _NUM:
                 rgb_matrix_layer_helper(HSV_SPRINGGREEN, LED_FLAG_UNDERGLOW);
                 break;
             case _UTIL:
