@@ -64,7 +64,7 @@ user_config_t user_config;
 #define RCTL_BR RCTL_T(KC_RBRACKET)
 #define LCTL_BR LCTL_T(KC_LBRACKET)
 
-#define SFT_SPC LSFT_T(KC_SPACE)
+// #define SFT_SPC LSFT_T(KC_SPACE)
 #define SFT_ENT RSFT_T(KC_ENTER)
 
 // Global tab forward and backward
@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, KC_GESC,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   T_SYM, SFT_SPC,    SFT_ENT,   T_NUM, KC_RAPC \
+                                          KC_LGUI,   T_SYM, KC_LSFT,    SFT_ENT,   T_NUM, KC_RAPC \
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_GESC,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LGUI,   T_SYM, SFT_SPC,    SFT_ENT,   T_NUM, KC_RAPC \
+                                          KC_LGUI,   T_SYM, KC_LSFT,    SFT_ENT,   T_NUM, KC_RAPC \
                                       //`--------------------------'  `--------------------------'
   ),
 
