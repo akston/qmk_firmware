@@ -1,3 +1,3 @@
 SPLIT_KEYBOARD = yes
-DEFAULT_FOLDER = sofle/rev1
+DEFAULT_FOLDER = sofle/keyhive
 SWAP_HANDS_ENABLE = yes
