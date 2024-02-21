@@ -21,10 +21,15 @@
 see https://docs.qmk.fm/#/feature_split_keyboard?id=setting-handedness
 for more options.
 */
+#define SPLIT_USB_DETECT
+
+#define RGB_DISABLE_WHEN_USB_SUSPENDED     // turn off effects when suspended
+#define SPLIT_TRANSPORT_MIRROR             // If LED_MATRIX_KEYPRESSES or LED_MATRIX_KEYRELEASES is enabled, you also will want to enable SPLIT_TRANSPORT_MIRROR
+
 
 // More lighting options in quantum/rgblight/rgblight.h
 #ifdef RGBLIGHT_ENABLE
-#    define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL+2
+#define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RAINBOW_SWIRL+1
 
 // Disabling some of these is a good way to save flash space.
 // #    define RGBLIGHT_EFFECT_ALTERNATING     // 108
@@ -37,6 +42,10 @@ for more options.
 // #    define RGBLIGHT_EFFECT_SNAKE           // 406
 // #    define RGBLIGHT_EFFECT_CHRISTMAS       // 508
 // #    define RGBLIGHT_EFFECT_TWINKLE         // 1156
+#endif
+
+#ifdef RGB_MATRIX_ENABLE
+#define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS
 #endif
 
 // Disabled to save space
