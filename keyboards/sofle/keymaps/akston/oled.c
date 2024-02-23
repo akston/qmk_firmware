@@ -31,8 +31,6 @@ static void render_logo(void) {
 
 static void print_status_narrow(void) {
     // Print current mode
-    oled_write_P(PSTR("\n\n"), false);
-
     switch (get_highest_layer(default_layer_state)) {
         case 0: // _COLEMAK
             oled_write_ln_P(PSTR("Clmk\n"), false);
@@ -44,9 +42,8 @@ static void print_status_narrow(void) {
             oled_write_P(PSTR("Mod"), false);
             break;
     }
-    oled_write_P(PSTR("\n\n"), false);
+    oled_write_P(PSTR("\n"), false);
     // Print current layer
-    oled_write_ln_P(PSTR("LAYER"), false);
     switch (get_highest_layer(layer_state)) {
         case 0: // _COLEMAK
         case 1: // _QWERTY
@@ -64,6 +61,16 @@ static void print_status_narrow(void) {
     oled_write_P(PSTR("\n\n"), false);
     led_t led_usb_state = host_keyboard_led_state();
     oled_write_ln_P(PSTR("CPSLK"), led_usb_state.caps_lock);
+
+    oled_write_P(PSTR("\n"), false);
+    oled_write(get_u8_str(rgb_matrix_get_hue(), ' '), false);
+    oled_write_ln_P(PSTR("/H"), false);
+    oled_write(get_u8_str(rgb_matrix_get_sat(), ' '), false);
+    oled_write_ln_P(PSTR("/S"), false);
+    oled_write(get_u8_str(rgb_matrix_get_val(), ' '), false);
+    oled_write_ln_P(PSTR("/V"), false);
+    oled_write(get_u8_str(rgb_matrix_get_speed(), ' '), false);
+    oled_write_P(PSTR("/R"), false);
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {

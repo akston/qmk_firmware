@@ -1,6 +1,9 @@
 {
     "keyboard_name": "Sofle",
     "manufacturer": "Keyhive",
+    "build": {
+        "lto": true
+    },
     "usb": {
         "vid": "0xFC32",
         "pid": "0x1287",
@@ -36,7 +39,6 @@
         "split_count": [37, 37],
         "led_count": 74,
         "max_brightness": 128,
-        // "center_point": [0, 22],
         "animations": {
             "solid_reactive_multinexus": true
         },
