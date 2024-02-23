@@ -40,13 +40,18 @@
         "led_count": 74,
         "max_brightness": 128,
         "animations": {
-            "solid_reactive_multinexus": true
+            "solid_reactive_multinexus": true,
+            "solid_reactive": true,
+            "solid_reactive_simple": true
         },
         "default": {
-            "animation": "solid_reactive_multinexus",
+            // "animation": "solid_reactive_multinexus", // fav, but matrix needs tweaking
+            // "animation": "solid_reactive", // sweet, but perhaps too showy
+            "animation": "solid_reactive_simple", // use this to tweak rgb_matrix
             "hue": 188,
             "sat": 220,
-            "val": 63
+            "val": 63,
+            "speed": 127
         },
         "layout": [
             { "x": 67, "y": 18, "flags": 2 },
