@@ -45,7 +45,7 @@ for more options.
 #endif
 
 #ifdef RGB_MATRIX_ENABLE
-#define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS
+// #define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS
 #endif
 
 // Disabled to save space
