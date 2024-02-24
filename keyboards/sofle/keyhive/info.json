@@ -67,11 +67,12 @@
             // for per-keys: row, then column - thumb row 4 indexes at 1 rather than 0
 
             // left side per-key LED
-            { "matrix": [4, 5], "x": 148, "y": 5, "flags": 4 },
-            { "matrix": [4, 4], "x": 115, "y": 64, "flags": 4 },
-            { "matrix": [3, 5], "x": 167, "y": 3, "flags": 4 },
-            { "matrix": [2, 5], "x": 186, "y": 5, "flags": 4 },
-            { "matrix": [1, 5], "x": 209, "y": 7, "flags": 4 },
+            // i think x and y need to be reversed here for coords
+            { "matrix": [4, 5], "x": 70, "y": 70, "flags": 4 },
+            { "matrix": [4, 4], "x": 64, "y": 60, "flags": 4 },
+            { "matrix": [3, 5], "x": 167, "y": 46, "flags": 4 },
+            { "matrix": [2, 5], "x": 186, "y": 30, "flags": 4 },
+            { "matrix": [1, 5], "x": 209, "y": 17, "flags": 4 },
             { "matrix": [0, 5], "x": 224, "y": 7, "flags": 4 },
             { "matrix": [0, 4], "x": 38, "y": 64, "flags": 4 },
             { "matrix": [1, 4], "x": 57, "y": 62, "flags": 4 },
@@ -91,9 +92,9 @@
             { "matrix": [3, 1], "x": 57, "y": 17, "flags": 4 },
             { "matrix": [2, 1], "x": 38, "y": 19, "flags": 4 },
             { "matrix": [1, 1], "x": 19, "y": 21, "flags": 4 },
-            { "matrix": [0, 1], "x": 0, "y": 21, "flags": 4 },
-            { "matrix": [0, 0], "x": 0, "y": 7, "flags": 4 },
-            { "matrix": [1, 0], "x": 19, "y": 7, "flags": 4 },
+            { "matrix": [0, 1], "x": 8, "y": 21, "flags": 4 },
+            { "matrix": [0, 0], "x": 8, "y": 8, "flags": 4 },
+            { "matrix": [1, 0], "x": 19, "y": 8, "flags": 4 },
             { "matrix": [2, 0], "x": 38, "y": 5, "flags": 4 },
             { "matrix": [3, 0], "x": 57, "y": 3, "flags": 4 },
 
