@@ -42,6 +42,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NO_ACTION_ONESHOT
 
 #ifdef RGB_MATRIX_ENABLE
+#    define ENABLE_RGB_MATRIX_CYCLE_ALL
+#    define ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT
+#    define ENABLE_RGB_MATRIX_RAINBOW_PINWHEELS
+#    define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS
+#    define ENABLE_RGB_MATRIX_TYPING_HEATMAP
 #    define RGB_DISABLE_WHEN_USB_SUSPENDED true  // turn off effects when suspended
 #    define RGB_MATRIX_MAXIMUM_BRIGHTNESS 150
 
@@ -102,8 +107,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define TAPPING_TERM 300
 #define PERMISSIVE_HOLD
-#define IGNORE_MOD_TAP_INTERRUPT
-
 #define TAPPING_TOGGLE 2
 
 #ifdef MOUSEKEY_ENABLE
@@ -116,24 +119,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #ifdef THEME_GODSPEED
-#    define OLED_FONT_H "keyboards/crkbd/keymaps/rpbaptist/glcdfont_godspeed.c"
+#    define OLED_FONT_H "keyboards/crkbd/keymaps/akston/glcdfont_godspeed.c"
 #    define THEME_HSV 132, 255, 125
 #endif
 
 #ifdef THEME_PULSE
-#    define OLED_FONT_H "keyboards/crkbd/keymaps/rpbaptist/glcdfont_pulse.c"
+#    define OLED_FONT_H "keyboards/crkbd/keymaps/akston/glcdfont_pulse.c"
 #    define THEME_HSV 123, 255, 125
 #endif
 
 #ifdef THEME_LASER
-#    define OLED_FONT_H "keyboards/crkbd/keymaps/rpbaptist/glcdfont_laser.c"
+#    define OLED_FONT_H "keyboards/crkbd/keymaps/akston/glcdfont_laser.c"
 #    define THEME_HSV HSV_MAGENTA
 #endif
 
 #define NO_ACTION_ONESHOT
-
-#undef PRODUCT
-#define PRODUCT Corne Keyboard
 
 #define LCPC_KEYS KC_LCTL, KC_LSFT, KC_9
 #define RCPC_KEYS KC_RCTL, KC_RSFT, KC_0
