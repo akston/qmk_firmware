@@ -1,6 +1,5 @@
 #include QMK_KEYBOARD_H
 
-extern uint8_t  is_master;
 static uint32_t oled_timer = 0;
 
 #ifdef RGB_MATRIX_ENABLE
@@ -155,9 +154,9 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
-#ifdef OLED_DRIVER_ENABLE
+#ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-    if (is_master) {
+    if (is_keyboard_master()) {
         return OLED_ROTATION_270;
     } else {
         return OLED_ROTATION_180;
@@ -235,10 +234,10 @@ void render_status(void) {
 
     oled_write_P(PSTR("\n"), false);
 
-    uint8_t led_usb_state = host_keyboard_leds();
+    led_t led_usb_state = host_keyboard_led_state();
     oled_write_P(PSTR("Mode:"), false);
-    oled_write_P(IS_LED_ON(led_usb_state, USB_LED_NUM_LOCK) ? PSTR(" NUM ") : PSTR("\n"), false);
-    oled_write_P(IS_LED_ON(led_usb_state, USB_LED_CAPS_LOCK) ? PSTR(" CAPS") : PSTR("\n"), false);
+    oled_write_P(led_usb_state.num_lock ? PSTR(" NUM ") : PSTR("\n"), false);
+    oled_write_P(led_usb_state.caps_lock ? PSTR(" CAPS") : PSTR("\n"), false);
 
 #    ifdef RGB_MATRIX_ENABLE
     oled_write_P(PSTR("\n"), false);
@@ -259,15 +258,15 @@ void render_status(void) {
 #    endif
 }
 
-void oled_task_user(void) {
+bool oled_task_user(void) {
     if (timer_elapsed32(oled_timer) > OLED_TIMEOUT) {
         oled_off();
-        return;
+        return false;
     } else {
         oled_on();
     }
 
-    if (is_master) {
+    if (is_keyboard_master()) {
         render_status();  // Renders the current keyboard state (layer, lock, caps, scroll, etc)
     } else {
         render_crkbd_logo();
@@ -279,6 +278,7 @@ void oled_task_user(void) {
             }
         #endif
     }
+    return false;
 }
 #endif
 
